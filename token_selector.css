@@ -28,10 +28,18 @@
 }
 
 .token-list a.btn {
-	margin-left: 0.4em;
+	margin-left: 0.2em;
+	padding-left: 0.2em;
+	margin-right: -3px;
+	padding-right: 3px;
 	font-weight: bold;
 	color: #A6B3CF;
 	cursor: pointer;
+}
+.token-list a.btn:focus,
+.token-list a.btn:hover,
+.token-list a.btn:active {
+	color: #888;
 }
 
 .token-select img { /* move into adjacent INPUT */
