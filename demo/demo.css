@@ -1,0 +1,36 @@
+body {
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+h1,
+h3 {
+	margin: 0 0 0.5em;
+}
+
+h3 {
+	font-size: 1em;
+}
+
+/* jQuery UI Autocomplete */
+
+.ui-autocomplete {
+	position: absolute;
+	margin: -3px 0 0;
+	border: 1px solid #CCD5E4;
+	padding: 0;
+	list-style-type: none;
+	background-color: #EFF2F7;
+}
+
+.ui-autocomplete a {
+	display: block;
+	border: 1px solid #EFF2F7;
+	padding: 2px 5px;
+	cursor: pointer;
+}
+
+.ui-autocomplete .ui-state-hover {
+	border-color: #FBCB09;
+	color: ##C77405;
+	background-color: #FDF5CE;
+}

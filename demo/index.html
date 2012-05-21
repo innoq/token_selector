@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Token Selector</title>
+	<link rel="stylesheet" href="../token_selector.css">
+	<link rel="stylesheet" href="demo.css">
+</head>
+
+<body>
+	<h1>Token Selector</h1>
+
+	<h3>multi-select</h2>
+	<input class="tokens"
+			value="1, 2"
+			data-tokens='[{ "id": 3, "name": "Foo" }, { "id": 4, "name": "Bar" }]'
+			data-query-url="/tokens"
+			data-token-uri="/tokens/%7Bid%7D">
+
+	<h3>single-choice</h2>
+	<input class="tokens"
+			value="foo"
+			data-tokens='[{ "id": "foo", "name": "lorem ipsum" }]'
+			data-query-url="/tokens"
+			data-token-uri="/tokens/%7Bid%7D"
+			data-singular="true">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+	<script src="https://raw.github.com/appendto/jquery-mockjax/v1.5.1/jquery.mockjax.js"></script>
+	<script src="../token_selector.js"></script>
+	<script src="demo.js"></script>
+</body>
+
+</html>
