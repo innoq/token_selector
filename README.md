@@ -1,7 +1,7 @@
 TokenSelector
 =============
 
-simple JavaScript widget for multi-selection
+lightweight JavaScript widget for multi-selection
 
 demo: http://innoq.github.com/token_selector
 

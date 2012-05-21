@@ -4,6 +4,19 @@ jQuery("input").each(function(i, node) {
 
 jQuery.mockjax({
 	url: "/tokens",
-	responseTime: 750,
-	responseText: [{ id: 13, name: "#13" }, { id: 17, name: "#17" }]
+	response: function() {
+		this.responseTime = 750;
+
+		this.responseText = [];
+		var input = $(".ui-autocomplete-input").val();
+		var max = Math.random() * 10 + 1;
+		var i = 0;
+		for(i; i < max; i++) {
+			var len = Math.random() * 10 + 1;
+			this.responseText.push({
+				id: i,
+				name: input + Math.random().toString(36).substring(len)
+			});
+		}
+	}
 });

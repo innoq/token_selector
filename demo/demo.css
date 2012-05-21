@@ -3,7 +3,8 @@ body {
 }
 
 h1,
-h3 {
+h3,
+p {
 	margin: 0 0 0.5em;
 }
 
@@ -31,6 +32,6 @@ h3 {
 
 .ui-autocomplete .ui-state-hover {
 	border-color: #FBCB09;
-	color: ##C77405;
+	color: #C77405;
 	background-color: #FDF5CE;
 }
