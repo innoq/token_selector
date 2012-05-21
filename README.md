@@ -1,12 +1,14 @@
 TokenSelector
 =============
 
-simple JavaScript library for [TBD]
+simple JavaScript widget for multi-selection
 
 demo: http://innoq.github.com/token_selector
+
 source: https://github.com/innoq/token_selector
 
 license: Apache License 2.0
+
 copyright: [innoQ Deutschland GmbH](http://innoq.com)
 
 
