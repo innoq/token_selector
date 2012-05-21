@@ -24,6 +24,7 @@
 }
 
 .token-list a {
+	white-space: nowrap;
 	text-decoration: none;
 	color: #308110;
 }
