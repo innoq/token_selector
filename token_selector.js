@@ -5,7 +5,7 @@ var TokenSelector = (function($) { // TODO: namespace?
 
 "use strict";
 
-var TokenSelector = function(node) {
+var TokenSelector = function(node, options) {
 	if(arguments.length === 0) { // subclassing; skip initialization
 		return;
 	}
@@ -16,6 +16,9 @@ var TokenSelector = function(node) {
 	this.tokens = this.getSelection();
 	this.uriTemplate = this.el.data("token-uri");
 
+	var defaults = { spinner: "spinner.gif" };
+	this.options = $.extend(defaults, options);
+
 	var self = this;
 
 	// TODO: ensure that IDs in field value match data-tokens and vice versa
@@ -25,7 +28,7 @@ var TokenSelector = function(node) {
 	selection = $('<ul class="token-list" />').append(selection);
 
 	var exclude = this.el.data("exclude") || null,
-		img = $('<img class="hidden" />').attr("src", "spinner.gif"); // TODO: configurable image path
+		img = $('<img class="hidden" />').attr("src", this.options.spinner);
 	this.input = $("<input />").autocomplete({
 		minLength: 3,
 		source: function(req, callback) {
