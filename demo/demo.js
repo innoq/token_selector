@@ -1,5 +1,5 @@
 jQuery("input").each(function(i, node) {
-	new TokenSelector(node, { spinner: "../spinner.gif" });
+	new TokenSelector(node);
 });
 
 jQuery.mockjax({
