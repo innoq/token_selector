@@ -15,10 +15,14 @@ copyright: [innoQ Deutschland GmbH](http://innoq.com)
 Usage
 -----
 
-    <input class="tokens">
+    <input class="tokens"
+            value="1, 2"
+            data-tokens='[{ "id": 1, "name": "Foo" }, { "id": 2, "name": "Bar" }]'
+            data-query-url="/tokens"
+            data-token-uri="/tokens/%7Bid%7D">
 
     $(".tokens").each(function(i, node) {
-        new IQVOC.QualifiedEntitySelector(node);
+        new IQVOC.TokenSelector(node);
     });
 
 See `demo` directory for examples.
