@@ -12,6 +12,16 @@ h3 {
 	font-size: 1em;
 }
 
+.ribbon {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.ribbon img {
+	border: 0;
+}
+
 /* jQuery UI Autocomplete */
 
 .ui-autocomplete {
