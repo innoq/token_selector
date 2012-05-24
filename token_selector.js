@@ -22,7 +22,8 @@ var TokenSelector = function(node, options) {
 	var self = this;
 
 	// TODO: ensure that IDs in field value match data-tokens and vice versa
-	var selection = $.map(this.el.data("tokens"), function(token, i) {
+	var prepopulation = this.el.data("tokens") || []; // TODO: rename
+	var selection = $.map(prepopulation, function(token, i) {
 		return self.createToken(token);
 	});
 	selection = $('<ul class="token-list" />').append(selection);
