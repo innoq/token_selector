@@ -1,3 +1,12 @@
+/*
+TokenSelector v0.8
+lightweight JavaScript widget for multi-selection
+http://innoq.github.com/token_selector
+
+license: Apache License 2.0
+copyright: [innoQ Deutschland GmbH](http://innoq.com)
+*/
+
 /*jslint vars: true, unparam: true, white: true */
 /*global jQuery */
 
@@ -16,7 +25,7 @@ var TokenSelector = function(node, options) {
 	this.tokens = this.getSelection();
 	this.uriTemplate = this.el.data("token-uri");
 
-	var defaults = { spinner: "spinner.gif" };
+	var defaults = { spinner: "spinner.gif" }; // TODO: move into prototype
 	this.options = $.extend(defaults, options);
 
 	var self = this;
@@ -32,12 +41,12 @@ var TokenSelector = function(node, options) {
 		img = $('<img class="hidden" />').attr("src", this.options.spinner);
 	this.input = $("<input />").autocomplete({
 		minLength: 3,
-		source: function(req, callback) {
+		source: function(req, callback) { // TODO: move into prototype
 			var uri = self.el.data("query-url");
 			$.getJSON(uri, { query: req.term }, function(data, status, xhr) { // TODO: error handling
 				var excludes = self.getSelection().
 						concat(exclude ? [exclude] : []);
-				data = $.map(data, function(token, i) {
+				data = $.map(data, function(token, i) { // TODO: document JSON format (`[ { id, name } ]`)
 					return $.inArray(token.id, excludes) !== -1 ? null :
 							{ value: token.id, label: token.name };
 				});
@@ -86,7 +95,7 @@ $.extend(TokenSelector.prototype, {
 	createToken: function(token) {
 		var el;
 		if(this.uriTemplate) {
-			var uri = this.uriTemplate.replace("%7Bid%7D", token.id); // XXX: not very generic -- XXX: why are { and } encoded?
+			var uri = this.uriTemplate.replace("%7Bid%7D", token.id); // XXX: not very generic -- XXX: why are { and } encoded? -- TODO: document
 			el = $('<a target="_blank" />').attr("href", uri).text(token.name);
 		} else {
 			el = $('<span />').text(token.name);
@@ -112,7 +121,7 @@ $.extend(TokenSelector.prototype, {
 		}
 	},
 	setSelection: function() {
-		this.el.val(this.tokens.join(this.delimiter));
+		this.el.val(this.tokens.join(this.delimiter)); // TODO: document (this is the value transmitted to the server!)
 	},
 	getSelection: function() {
 		return $.map(this.el.val().split(this.delimiter), function(token, i) {
